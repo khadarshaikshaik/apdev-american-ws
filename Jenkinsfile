@@ -16,7 +16,7 @@ pipeline {
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
       }
       steps {
-        bat 'mvn -X clean package mule:deploy  -Danypoint.username=${ANYPOINT_CREDENTIALS_USR} -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW} -Danypoint.environment=Sandbox'
+        bat 'mvn -X clean package mule:deploy -Denv=DEV -Danypoint.username=${ANYPOINT_CREDENTIALS_USR} -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW} -Danypoint.environment=Sandbox -DmuleDeploy'
       }
     }
   }
